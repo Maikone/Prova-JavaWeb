@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/10/2018 16:22:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.web.trabalho.Entidade.Pedido" table="pedido" catalog="bbwshop" optimistic-lock="version">
+        <id name="cod" type="java.lang.Integer">
+            <column name="cod" />
+            <generator class="identity" />
+        </id>
+        <property name="data" type="date">
+            <column name="data" length="10" />
+        </property>
+        <property name="total" type="string">
+            <column name="total" length="11" />
+        </property>
+        <property name="idPessoa" type="java.lang.Integer">
+            <column name="idPessoa" />
+        </property>
+        <property name="qtd" type="string">
+            <column name="qtd" length="100" />
+        </property>
+        <property name="codProd" type="string">
+            <column name="codProd" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

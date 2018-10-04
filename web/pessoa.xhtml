@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    Header
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Cadastrar Pessoa" url="pessoa.jsf" />
+                            <p:menuitem value="Casdaastro de Produto" url="produto.jsf" />
+                            <p:menuitem value="Produtos" url="listarProduto.jsf" />
+                            <p:menuitem value="Sair" url="index.jsf" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h1>Cadastro de Pessoa</h1>
+                    <h:form>
+                        <p:outputLabel value="Id Pessoa " for="txtIDPessoa" escape="false"/>
+                        <p:inputText value="#{pessoaBean.pessoa.id}" id="txtIDPessoa"/>                        
+                        <h:outputText value="&lt;br/&gt;" escape="false" />
+                        <br></br>
+                        <p:outputLabel value="Nome__: " for="txtNome"/>
+                        <p:inputText value="#{pessoaBean.pessoa.nome}" id="txtNome"/>                        
+                        <h:outputText value="&lt;br/&gt;" escape="false" />
+                        <br></br>
+                        <p:outputLabel value="RG___: " for="txtRg"/>
+                        <p:inputText value="#{pessoaBean.pessoa.rg}" id="txtRg"/>                        
+                        <h:outputText value="&lt;br/&gt;" escape="false" />
+                        <br></br>
+                        <p:outputLabel value="CPF__: " for="txtCpf"/>
+                        <p:inputText value="#{pessoaBean.pessoa.cpf}" id="txtCpf"/>                        
+                        <h:outputText value="&lt;br/&gt;" escape="false" />
+                        <br></br>
+                        <p:outputLabel value="Senha_: " for="txtSenha"/>
+                        <p:inputText value="#{pessoaBean.pessoa.senha}" id="txtSenha"/>                        
+                        <h:outputText value="&lt;br/&gt;" escape="false" />
+                        <br></br>
+                        <p:commandButton action="#{pessoaBean.salvar}" value="Salvar"/>
+                        <p:commandButton action="#{pessoaBean.BuscarPorId}" value="Buscar"/>
+                        <p:commandButton action="#{pessoaBean.alterar}" value="Alterar"/>
+                        <p:commandButton action="#{pessoaBean.deletar}" value="Deletar"/>
+                        
+
+
+                    </h:form>
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+</html>
+
